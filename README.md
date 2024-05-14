@@ -98,4 +98,73 @@ def bubble_sort(arr):
 arr = [64, 25, 12, 22, 11]
 bubble_sort(arr)
 print("Sorted array is:", arr)
-#########################################################################
+########################################################################################################################################3
+
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+class Stack:
+    def __init__(self):
+        self.top = None
+        self.size = 0
+
+    def is_empty(self):
+        return self.size == 0
+
+    def push(self, item):
+        new_node = Node(item)
+        new_node.next = self.top
+        self.top = new_node
+        self.size += 1
+
+    def pop(self):
+        if self.is_empty():
+            return None
+        popped_item = self.top.data
+        self.top = self.top.next
+        self.size -= 1
+        return popped_item
+
+    def peek(self):
+        if self.is_empty():
+            return None
+        return self.top.data
+
+    def stack_size(self):
+        return self.size
+########################################################################
+
+class Queue:
+    def __init__(self):
+        self.items = []
+
+    def is_empty(self):
+        return len(self.items) == 0
+
+    def enqueue(self, item):
+        self.items.append(item)
+
+    def dequeue(self):
+        if self.is_empty():
+            return None
+        else:
+            return self.items.pop(0)
+
+    def peek(self):
+        if self.is_empty():
+            return None
+        else:
+            return self.items[0]
+
+    def size(self):
+        return len(self.items)
+
+queue = Queue()
+print(queue.size())
+print(queue.is_empty())
+queue.enqueue(4)
+print(queue.dequeue())
+################################################################
+
