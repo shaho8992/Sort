@@ -184,4 +184,24 @@ print(next_day(3, 7, 2023))   # Output: 4/7/2023
 print(next_day(31, 12, 2023))  # Output: 1/1/2024
 print(next_day(28, 2, 2020))   # Output: 29/2/2020
 #################################################################
+def sum_of_even_numbers(numbers_list):
+    sum = 0
+    for number in numbers_list:
+        if number % 2 == 0:
+            sum += number
+    return sum
+
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+print("Sum of even numbers in the list:", sum_of_even_numbers(numbers))
+#######################################################
+
+def print_odd_numbers(numbers_list):
+    for number in numbers_list:
+        if number % 2 != 0:
+            print(number)
+
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+print("Odd numbers in the list:")
+print_odd_numbers(numbers)
+##########################################################################
 
